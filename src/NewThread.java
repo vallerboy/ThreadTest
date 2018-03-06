@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class NewThread {
     public static void main(String[] args) {
-        ScheduledExecutorService executorService = Executors.newScheduledThreadPool(2);
+        ScheduledExecutorService executorService = Executors.newScheduledThreadPool(1);
 
 
         AtomicBoolean cos = new AtomicBoolean(false);
