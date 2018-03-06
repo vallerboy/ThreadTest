@@ -5,15 +5,20 @@ public class Main {
             new Thread1(operation).start();
         }
 
-        System.out.println(operation.oskar);
+        try {
+            Thread.sleep(20000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("MAIN: " + operation.oskar);
     }
 
 
     private static class Operation {
         private int oskar = 0;
-         public int operation() {
-            oskar++;
-            oskar--;
+          public int operation() {
+            oskar = oskar + 1;
+            oskar = oskar - 1;
             return oskar;
         }
     }
@@ -27,7 +32,7 @@ public class Main {
 
         @Override
         public void run() {
-            for(int i = 0; i <= 10000; i++){
+            for(int i = 0; i <= 100000; i++){
                 operation.operation();
             }
 
